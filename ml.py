@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 rng = numpy.random
 from tensorflow.keras.models import Sequential
 #Define your spreadsheet
-spreadsheet = 'LR_ML.xlsx'
+spreadsheet = 'data-sets/LR_ML.xlsx'
 data = pd.read_excel(spreadsheet)
 
 #Define your useful columns of data
@@ -32,8 +32,8 @@ train_Y = numpy.asarray(MTBF)
 n_samples = train_X.shape[0]
 
 # tf Graph Input --- Setting the dtype for the placeholder information
-X =float
-Y =float
+X =tf.Placeholder("float")
+Y =tf.Placeholder("float")
 
 # Set model weights This is initializing the guesses of the model for weight and bias
 W = tf.Variable(rng.randn(), name="weight")
